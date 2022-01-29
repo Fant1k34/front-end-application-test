@@ -29,6 +29,21 @@ function reducer(state = initialState, action) {
             return {
                 ...state
             }
+        
+        case 'RELOAD_PICTURES':
+            return {
+                ...state,
+                urls: state.urls = [] 
+            }
+
+        case 'PICTURES_SUCCESS':
+            console.log(state.urls);
+            const urlsCopy = state.urls.slice();
+            urlsCopy.push(action.payload.payload);
+            return {
+                ...state,
+                urls: urlsCopy
+            }
 
         default: {
             return {

@@ -3,7 +3,8 @@ const initialState = {
     name: 'Hello, Redux',
     version: '1.5.2',
     description: 'Описание',
-    timeseries: []
+    timeseries: [],
+    urls: []
 };
  
 
