@@ -4,7 +4,9 @@ const initialState = {
     version: '1.5.2',
     description: 'Описание',
     timeseries: [],
-    urls: []
+    urls: [],
+    filteredId: [],
+    needFilter: false
 };
  
 

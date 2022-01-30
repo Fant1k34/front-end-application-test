@@ -5,11 +5,27 @@ function reducer(state = initialState, action) {
     console.log(action);
     console.log(action.type);
     switch (action.type) {
-        case 'LIKING':
+        case 'LIKING': {
+            console.log(JSON.stringify(state.timeseries));
+            let modified = state.timeseries.slice();
+            modified[action.payload].isLiked = !modified[action.payload].isLiked;
             return {
                 ...state,
-                name: state.name = "Liked"
-            }
+                timeseries: modified
+                }
+        }
+        
+        case 'DELETING': {
+            let modified = state.timeseries.slice();
+            modified.splice(action.payload, 1);
+            let urlsModified = state.urls.slice();
+            urlsModified.splice(action.payload, 1);
+            return {
+                ...state,
+                timeseries: modified,
+                urls: urlsModified
+                }
+        }
 
         case 'FETCHING':
             return {
@@ -21,8 +37,8 @@ function reducer(state = initialState, action) {
             console.log(action.payload);
             return {
                 ...state,
-                name: state.name = action.payload.init,
-                timeseries: state.timeseries = action.payload.dataseries
+                name: action.payload.init,
+                timeseries: action.payload.dataseries
             }
 
         case 'FETCH_ERROR':
@@ -33,7 +49,7 @@ function reducer(state = initialState, action) {
         case 'RELOAD_PICTURES':
             return {
                 ...state,
-                urls: state.urls = [] 
+                urls: [] 
             }
 
         case 'PICTURES_SUCCESS':
@@ -45,10 +61,17 @@ function reducer(state = initialState, action) {
                 urls: urlsCopy
             }
 
+        case 'FILTERING':
+            console.log(action.type);
+            return {
+                ...state,
+                needFilter: !state.needFilter
+            }
+
         default: {
             return {
             ...state,
-            name: state.name = "Поймал"
+            name: "Поймал"
             }
         }
     }

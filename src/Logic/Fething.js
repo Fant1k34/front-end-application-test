@@ -1,7 +1,7 @@
 import getAllPostsAction from "../Actions/getAllPostsAction";
 import errorGettingPostsAction from "../Actions/errorGettingPostsAction";
-import likeAction from "../Actions/likeAction";
 import reloadImagesAction from "../Actions/reloadImagesAction";
+import filterAction from "../Actions/filterAction";
 
 function getAllData(dispatch) {
     return {
@@ -11,6 +11,9 @@ function getAllData(dispatch) {
             return fetchPosts().then(([response, json]) =>{
                 if(response.status === 200){
                     // Диспатчим посты
+                    for (var i = 0; i < Object.keys(json.dataseries).length; i++) {
+                        json.dataseries[i].isLiked = false; // Не лайкнуты
+                    }
                     dispatch(successGettingPostsAction(json));
 
                     // Диспатчим картинки
@@ -25,9 +28,16 @@ function getAllData(dispatch) {
               }
             });
         },
-        onLike: () => {
-            console.log('!');
-            dispatch(likeAction);
+        onLike: (event) => {
+            console.log(event.target.dataset.mssg);
+            dispatch(likeAction(event.target.dataset.mssg));
+        },
+        onDelete: (event) => {
+            console.log(event.target.dataset.mssg);
+            dispatch(deleteAction(event.target.dataset.mssg));
+        },
+        onFilter: () => {
+            dispatch(filterAction);
         }
     }
 }
@@ -60,5 +70,18 @@ function successDrawingPicturesAction(number, payload) {
     }
 }
 
+function likeAction(payload) {
+    return {
+        type: 'LIKING',
+        payload: payload
+    }
+}
+
+function deleteAction(payload) {
+    return {
+        type: 'DELETING',
+        payload: payload
+    }
+}
 
 export default getAllData;

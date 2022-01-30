@@ -1,5 +1,5 @@
-const likeAction = {
+const likeActionUseless = {
     type: 'LIKING'
 }
 
-export default likeAction;
+export default likeActionUseless;
