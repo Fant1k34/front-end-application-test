@@ -1,5 +1,5 @@
 const getAllPostsAction = {
-    type: "FETCHING"
+  type: "FETCHING",
 };
 
 export default getAllPostsAction;

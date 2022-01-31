@@ -1,5 +1,5 @@
 const errorGettingPostsAction = {
-    type: 'FETCH_ERROR'
+  type: "FETCH_ERROR",
 };
 
 export default errorGettingPostsAction;

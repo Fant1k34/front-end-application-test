@@ -1,5 +1,5 @@
 const reloadImagesAction = {
-    type: 'RELOAD_PICTURES'
-}
+  type: "RELOAD_PICTURES",
+};
 
 export default reloadImagesAction;

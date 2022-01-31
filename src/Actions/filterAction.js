@@ -1,5 +1,5 @@
 const filterAction = {
-    type: 'FILTERING'
-}
+  type: "FILTERING",
+};
 
 export default filterAction;

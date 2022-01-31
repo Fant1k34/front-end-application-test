@@ -1,5 +1,5 @@
 const likeActionUseless = {
-    type: 'LIKING'
-}
+  type: "LIKING",
+};
 
 export default likeActionUseless;
