@@ -49,7 +49,7 @@ function getAllPictures() {
 
 function fetchPosts() {
   return fetch(
-    "http://www.7timer.info/bin/api.pl?lon=30.3141&lat=59.9386&product=astro&output=json"
+    "https://www.7timer.info/bin/astro.php?lon=30.3&lat=59.9&ac=0&unit=metric&output=json&tzshift=0"
   ).then((response) => Promise.all([response, response.json()]));
 }
 
