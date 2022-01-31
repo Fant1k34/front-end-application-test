@@ -4,8 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+class Doc extends React.Component{
+  componentDidMount(){
+    document.title = "Котико-погода"
+  }
+
+  render(){
+    return(
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+    )
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
+    <Doc />
     <App />
   </React.StrictMode>,
   document.getElementById("root")
