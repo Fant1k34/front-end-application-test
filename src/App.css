@@ -28,12 +28,83 @@
   color: #61dafb;
 }
 
+.LikedButton{
+  outline:none;
+  box-shadow:none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 0.85em;
+  border-radius: 100px;
+}
+
 .Liked {
-  background-color: red;
+  background-color: rgb(255, 92, 92);
+}
+
+.Liked:hover {
+  background-color: rgb(255, 80, 80);
 }
 
 .Usual {
-  background-color: blue;
+  background-color: rgb(149, 149, 255);
+}
+
+.Usual:hover {
+  background-color: rgb(255, 122, 122);
+}
+
+.DeleteButton {
+  margin-left: 3%;
+  margin-top: 3%;
+  background-color: rgb(149, 149, 255);
+  outline:none;
+  box-shadow:none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 0.9em;
+  color: black;
+  border-radius: 100px;
+}
+
+.DeleteButton:hover {
+  background-color: rgb(95, 95, 109);
+}
+
+.FilterButton {
+  height: 24px;
+  width: 24px;
+  border: 1px solid #000000;
+  background: #ebd3af url(/public/edit.png) no-repeat 1px 1px;
+  background-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.Filtered {
+  background-color: #858079;
+}
+
+.ReloadButton {
+  margin-left: 1%;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #000000;
+  background: #ebd3af url(/public/reload.png) no-repeat 1px 1px;
+  background-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.CardText {
+  margin-top: 15%;
+  margin-right: 10%;
+}
+
+.CardImage {
+  padding-left: 10%;
+  margin-top: 5%;
 }
 
 @keyframes App-logo-spin {

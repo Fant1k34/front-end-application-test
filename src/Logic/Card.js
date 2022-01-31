@@ -9,8 +9,8 @@ function Card(props) {
                 <p>Одностраничный сервис по показу погоды и кошечек</p>
                 <p>Для альфа-банка</p>
                 <p>Город: Санкт-Петербург</p>
-                <button onClick={props.onFilter}>Filter</button>
-                <button onClick={props.onReload}>Reload</button>
+                <button onClick={props.onFilter} className={(props.needFilter ? "Filtered" : "FreeFilter") + " FilterButton"}></button>
+                <button onClick={props.onReload} className={"ReloadButton"}></button>
             </div>
             <div className="Card">
                 {props.timeseries && props.timeseries.map((element, i) => {     
@@ -20,14 +20,18 @@ function Card(props) {
                         <table>
                             <tr>
                                 <td>
-                                    Температура воздуха: <strong>{element.temp2m}</strong>
-                                    <br/> Направление ветра: <strong>{element.wind10m.direction}</strong>
-                                    <br/> Вихревая мощность: <strong>{element.wind10m.speed}</strong>
-                                    <br/> <button className={element.isLiked ? "Liked" : "Usual"} onClick={props.onLike} data-mssg={i}>Like</button>
-                                    <button className={element.isLiked} onClick={props.onDelete} data-mssg={i}>Delete</button>
+                                    <div className="CardText">
+                                        Температура воздуха: <strong>{element.temp2m}</strong>
+                                        <br/> Направление ветра: <strong>{element.wind10m.direction}</strong>
+                                        <br/> Вихревая мощность: <strong>{element.wind10m.speed}</strong>
+                                        <br/> <button className={(element.isLiked ? "Liked" : "Usual") + " LikedButton"} onClick={props.onLike} data-mssg={i}>❤</button>
+                                        <button className={"DeleteButton"} onClick={props.onDelete} data-mssg={i}>🗑</button>
+                                    </div>
                                 </td>
                                 <td>
-                                    <img height="250em" width="250em" src={props.urls[i]} alt="Картинка загружается"/>
+                                    <div className="CardImage">
+                                        <img height="250em" width="250em" src={props.urls[i]} alt="Картинка загружается"/>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
