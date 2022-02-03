@@ -8,10 +8,8 @@ function Card({parentToChild}) {
     }
 
     return (
-            <table>
-                <tr>
-                <td>
-                    <div className="CardText">
+            <div className="FullCard">
+                <div className="FirstColumn">
                     Температура воздуха: {" "} <strong>{parentToChild.element.temp2m}</strong>
                     <br /> Направление ветра: {" "}
                     <strong>{parentToChild.element.wind10m.direction}</strong>
@@ -35,20 +33,16 @@ function Card({parentToChild}) {
                     >
                         🗑
                     </button>
-                    </div>
-                </td>
-                <td>
-                    <div className="CardImage">
+                </div>
+                <div className="SecondColumn">
                     <img
                         height="250em"
-                        width="250em"
+                        
                         src={parentToChild.props.urls[parentToChild.i]}
                         alt="Картинка загружается"
                     />
-                    </div>
-                </td>
-                </tr>
-            </table>
+                </div>
+            </div>
     );
 }
 
