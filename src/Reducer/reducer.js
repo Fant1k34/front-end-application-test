@@ -1,11 +1,8 @@
 import initialState from "../initialState";
 
 function reducer(state = initialState, action) {
-  console.log(action);
-  console.log(action.type);
   switch (action.type) {
     case "LIKING": {
-      console.log(JSON.stringify(state.timeseries));
       let modified = state.timeseries.slice();
       modified[action.payload].isLiked = !modified[action.payload].isLiked;
       return {
@@ -32,8 +29,6 @@ function reducer(state = initialState, action) {
       };
 
     case "FETCH_SUCCESS":
-      console.log("I'm here");
-      console.log(action.payload);
       return {
         ...state,
         name: action.payload.init,
@@ -49,10 +44,10 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         urls: [],
+        needFilter: false
       };
 
     case "PICTURES_SUCCESS":
-      console.log(state.urls);
       const urlsCopy = state.urls.slice();
       urlsCopy.push(action.payload.payload);
       return {
@@ -61,7 +56,6 @@ function reducer(state = initialState, action) {
       };
 
     case "FILTERING":
-      console.log(action.type);
       return {
         ...state,
         needFilter: !state.needFilter,
@@ -69,12 +63,10 @@ function reducer(state = initialState, action) {
 
     default: {
       return {
-        ...state,
-        name: "Поймал",
+        ...state
       };
     }
   }
-  return state;
 }
 
 export default reducer;

@@ -73,11 +73,11 @@
 }
 
 .FilterButton {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   border: 1px solid #000000;
   background: #ebd3af url(/public/edit.png) no-repeat 1px 1px;
-  background-size: 20px;
+  background-size: 26px;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -88,11 +88,11 @@
 
 .ReloadButton {
   margin-left: 1%;
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   border: 1px solid #000000;
   background: #ebd3af url(/public/reload.png) no-repeat 1px 1px;
-  background-size: 20px;
+  background-size: 26px;
   cursor: pointer;
   border-radius: 4px;
 }
