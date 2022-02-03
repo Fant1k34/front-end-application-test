@@ -7,9 +7,10 @@
 ## Функциональность
 
 1. Нажать на кнопку запуска погодо-котов с помощью кнопки загрузки
+![image](https://user-images.githubusercontent.com/45245696/152268177-f1caefb3-0732-43dd-ad49-7e5d6346b583.png)
 
 2. Дождаться подгрузки информации на этой же странице:
-![image](https://user-images.githubusercontent.com/45245696/152268177-f1caefb3-0732-43dd-ad49-7e5d6346b583.png)
+![image](https://user-images.githubusercontent.com/45245696/152268372-2e0b3ebe-3bf2-4f58-8084-3593ca66bc85.png)
 
 3. Представлены карточки, которые можно лайкать с помощью синей кнопки лайка:
 ![image](https://user-images.githubusercontent.com/45245696/152268217-db0bc668-6d5d-4d11-854a-fb96185b4440.png)
