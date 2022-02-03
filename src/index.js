@@ -10,7 +10,7 @@ class Doc extends React.Component{
 
   render(){
     return(
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+      <div></div>
     )
   }
 }

@@ -33,7 +33,7 @@ function Cards(props) {
           props.timeseries.map((element, i) => {
             if ((props.needFilter && element.isLiked) || !props.needFilter) {
               return (
-                  <Card parentToChild={{element, props, i}}/>
+                  <Card parentToChild={{element, props, i}} key={i}/>
               );
             }
             else {
