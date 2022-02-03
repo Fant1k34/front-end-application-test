@@ -8,7 +8,7 @@ function Card({parentToChild}) {
     }
 
     return (
-            <div className="FullCard">
+            <div className="FullCard" role="card">
                 <div className="FirstColumn">
                     Температура воздуха: {" "} <strong>{parentToChild.element.temp2m}</strong>
                     <br /> Направление ветра: {" "}
@@ -37,9 +37,9 @@ function Card({parentToChild}) {
                 <div className="SecondColumn">
                     <img
                         height="250em"
-                        
                         src={parentToChild.props.urls[parentToChild.i]}
                         alt="Картинка загружается"
+                        role="image"
                     />
                 </div>
             </div>
